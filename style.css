@@ -7,7 +7,6 @@ body{
 img{
   max-width: 100%;
   height:auto;
-  width:auto;
 }
 
 p{
@@ -19,8 +18,8 @@ p{
 h1{
   color: rgb(38, 38, 88);
   margin: 20px;
-  font-weight: 30px;
-
+  font-size: 48px;
+  font-size: clamp(18px,2vw,48px);
 }
 
 
@@ -28,17 +27,27 @@ h1{
 .header{
     background: rgb(255, 255, 255);
     display: grid;
-    grid-template-columns: max-content max-content;
+    /* grid-template-columns: max-content max-content; */
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 30px;
     border-bottom: 1px solid rgb(108, 97, 97);
     padding-bottom: 30px;
-    grid-template-rows: 1f;
-
-
+    position: sticky;
+    top:0;
+     /* Définissez une largeur maximale pour votre contenu */
+    margin: 0 auto; /* Centrez le contenu horizontalement */
+    padding: 20px; /* Ajoutez un peu de marge intérieure pour l'apparence */
+    text-align: left; /* Centrez le texte horizontalement */
+    z-index: 999;
 }
 
+@media (min-width:640px){
+  .header{
+        grid-template-columns: max-content max-content;
+
+  }
+}
 
 .header nav{
     display: grid;
@@ -46,14 +55,6 @@ h1{
     gap: 24px;
 }
 
-.header{
-    position: sticky;
-    top:0;
-     /* Définissez une largeur maximale pour votre contenu */
-    margin: 0 auto; /* Centrez le contenu horizontalement */
-    padding: 20px; /* Ajoutez un peu de marge intérieure pour l'apparence */
-    text-align: left; /* Centrez le texte horizontalement */
-}
 
 
 .collant{
@@ -63,8 +64,7 @@ h1{
 
 h2{
   color: rgb(38, 38, 88);
-  margin: 50px;
-  font-style: 100px;
+  text-align: center;
   font-size: 40px;
 }
 
@@ -75,14 +75,16 @@ p{
     font-style: normal;
 }
 
-.index .grid{
+.index{
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 10px;
-    margin: 200px;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+    /* grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) */
+    max-width: 1400px;
+    padding:20px;
+    margin: 0 auto;
   
 }
+
 
 
 .projet-large{
@@ -107,7 +109,8 @@ p{
     transition:1s;
   }
   .item p{
-    font-size: 32px;
+    font-size: 18px;
+    font-size: clamp(18px,2vw,32px);
     opacity:0;
   }
   .item:hover img{
@@ -117,14 +120,19 @@ p{
     opacity:1;
   }
 
-  .grid{
+  .main-grid{
     display : grid;
-    grid-template-columns: 400px 1fr; /* Exemple avec des proportions */
+    grid-template-columns: 1fr ; /* Exemple avec des proportions */
     gap: 20px; /* 20px d'espacement entre les colonnes */
-    margin: 100px;
+    /* margin: 100px; */
     justify-content: center;
   }
 
+  @media (min-width:640px){
+    .main-grid{
+      grid-template-columns: 1fr 1fr /* Exemple avec des proportions */
+  }
+}
 
 
   .item img{
@@ -133,11 +141,11 @@ p{
     object-fit: cover
   }
 
-  .project .grid{
+  .project {
     display: grid;
-    grid-template-columns: 1fr 2fr;
     gap: 20px;
-    margin: 100px;
+    padding:20px;
+    margin: 0;
     /*grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));*/
     justify-content: center;
 }
@@ -168,22 +176,6 @@ p{
   font-size: 15px;
 }
 
-.item2 input[type="checkbox"] {
- display: none;  /* On ne veut pas afficher la checkbox */
-}
-
-.item2 img{
-  margin: 50px;
-  width: 100%;  /* Adapte les images à la taille de leur conteneur */
-  transition: transform 0.3s ease-in-out;  /* Transition fluide pour le zoom */
-  cursor: pointer;  /* Change le curseur pour montrer que l'image est cliquable */
-  max-width: 600px;  /* Pour éviter que les images soient trop grandes */
-}
-
-.item2 input[type="checkbox"]:checked + img{
-  transform: scale(2);  /* Agrandissement de l'image à 2x */
-  cursor: zoom-out;  /* Change le curseur pour indiquer que l'image peut être dézoomée */
-}
 
 
 h3{
@@ -199,27 +191,30 @@ nav a{
 }
 
 .logo{
-  display:grid;
-    grid-column: 1/-1;
-    grid-template-columns: 500px 1fr;
-    justify-items: baseline;
-    align-items: center;
-    /* align-items: center; */
-    gap: 50px;
-    padding-top: 10px;
+  /*display:grid;*/
+  grid-column: 1/-1;
+  /*grid-template-columns: 100px 1fr;*/
+  justify-items: baseline;
+  align-items: center;
+  /* align-items: center; */
+  /*gap: 10px;*/
+  padding-top: 10px;
 }
 
 .logo img{
-  margin: 100px;
+  width: 300px;
+  /*justify-self: center;*/
   transition: transform 0.5s ease;
+  align-items: center;
 }
 
 .logo img:hover{
+  align-items: center;
   transform: rotate(360deg);
 }
 
 .logo p{
-  align-items: center;
+align-items: center;
 }
 
 .cv{
@@ -232,5 +227,36 @@ text-decoration: underline;  /* Soulignement uniquement au survol */
 }
 
 .cv:hover {
-  text-decoration: underline;  /* Soulignement uniquement au survol */
+text-decoration: underline;  /* Soulignement uniquement au survol */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Deux colonnes de même largeur */
+  gap: 20px; /* Espacement entre les colonnes */
+  margin: 20px;
+}
+
+.sticky {
+  font-size: 1.2em;
+}
+
+.item2 img{
+  width: 100%; /* Les images prennent toute la largeur du conteneur */
+  margin-bottom: 10px;
+  border-radius: 8px; /* Optionnel : arrondir les coins des images */
+}
+
+@media (orientation: portrait) {
+  .container {
+      grid-template-columns: 1fr; /* Une seule colonne en portrait */
   }
+
+  .texte {
+      order: 1; /* Le texte sera en haut */
+  }
+
+  .images {
+      order: 2; /* Les images seront en dessous du texte */
+  }
+}

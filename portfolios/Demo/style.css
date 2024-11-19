@@ -1,0 +1,29 @@
+@font-face{
+    font-family: PicNic;
+    src: url(webfonts/PicNic.woff) format("Woff"),
+         url(webfonts/PicNic.woff2) format("Woff2");
+
+}
+
+body{
+    background:black;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+}
+
+h1{
+    color: white;
+    font-size: 60px;
+    font-family: "PicNic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 50;
+  font-style: normal;
+}
+
+a{
+    color: plum;
+}
+
+p{
+    font-size: 30px;
+}

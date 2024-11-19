@@ -8,6 +8,7 @@ body{
 img{
   max-width: 100%;
   height:auto;
+  border-radius: 8px
 }
 
 p{
@@ -98,7 +99,6 @@ p{
     width:auto; /* selon votre maquette */
     background: #ffffff;
     text-decoration: none;
-  
   }
   
   .item>*{
@@ -145,7 +145,7 @@ p{
   .project {
     display: grid;
     gap: 20px;
-    padding:20px;
+    padding:40px;
     margin: 0;
     /*grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));*/
     justify-content: center;
@@ -173,7 +173,7 @@ p{
 }
 
 .sticky p{
-  font-size: 15px;
+  font-size: 13px;
 }
 
 
@@ -269,4 +269,37 @@ text-decoration: underline;  /* Soulignement uniquement au survol */
   }
 }
 
+/*.logo2{
+width: 40px;
+height: auto;
+margin-right: 10px;
+}*/
 
+.arrow {
+    
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: black;
+  z-index: 1000;
+}
+
+@media (min-width:640px){
+  .arrow {
+      font-size: 30px;
+  }
+}
+
+.left-arrow {
+  left: 1.5%;
+}
+
+.right-arrow {
+  right: 1.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

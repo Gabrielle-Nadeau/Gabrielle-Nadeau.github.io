@@ -2,6 +2,7 @@ body{
     font-family: "Poppins", sans-serif;
     font-weight: 20;
     font-style: normal;
+    /*cursor: url('images/logocurseur.gif'), auto;*/
 }
 
 img{
@@ -168,8 +169,7 @@ p{
     font-family: "Poppins", sans-serif;
     font-weight: 10;
     font-style: normal;
-    margin: 50px;
-
+    margin: 10px;
 }
 
 .sticky p{
@@ -199,6 +199,14 @@ nav a{
   /* align-items: center; */
   /*gap: 10px;*/
   padding-top: 10px;
+}
+
+.logo{
+  width: 100%; /* Tu peux ajuster cette largeur selon ton besoin */
+  max-width: 800px; /* Limite la largeur à 800px */
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; /* Centrer verticalement */
+
 }
 
 .logo img{
@@ -260,3 +268,5 @@ text-decoration: underline;  /* Soulignement uniquement au survol */
       order: 2; /* Les images seront en dessous du texte */
   }
 }
+
+

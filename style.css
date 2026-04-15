@@ -1,27 +1,63 @@
 body{
-  font-family: "snug-sharp-variable", sans-serif;
-  font-size: 16px
+  font-family: "montserrat", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  cursor: none;
     /*cursor: url('images/logocurseur.gif'), auto;*/
+}
+
+.cursor {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    background: #cd7d4a;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    top: 0;
+    left: 0;
+}
+
+.header-nav a {
+    cursor: none;
+}
+
+.trail {
+    position: fixed;
+    width: 13px;
+    height: 13px;
+    background: #cd7d4a;
+    border-radius: 100%;
+    pointer-events: none;
+    transform: translate(-100%, -100%);
+    opacity: 0.5; /* pas transparent, juste un peu plus léger */
+    z-index: 9998;
+    transition: transform 0.15s linear;
+    top: 0;
+    left: 0;
 }
 
 img{
   max-width: 100%;
   height:auto;
-  border-radius: 8px
+  border-radius: 4px
 }
 
 p{
-    font-family: "Poppins", sans-serif;
+    font-family: "montserrat", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
 h1{
+  font-family: "montserrat", serif;
   color: rgb(0, 0, 0);
-  margin: 20px;
-  font-size: 60px;
+  margin-right: 20px;
+  font-size: 20px;
   letter-spacing: 1px;
-  font-weight: 600;
+  font-weight: 700;
+  /*font-style: italic;*/
 }
 
 
@@ -32,16 +68,16 @@ h1{
     /* grid-template-columns: max-content max-content; */
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 30px;
-    border-bottom: 2px solid rgb(247, 224, 186);
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgb(205, 125, 74);
     padding-bottom: 30px;
     position: sticky;
     top:0;
      /* Définissez une largeur maximale pour votre contenu */
     margin: 0 auto; /* Centrez le contenu horizontalement */
-    padding: 20px; /* Ajoutez un peu de marge intérieure pour l'apparence */
-    text-align: left; /* Centrez le texte horizontalement */
-    z-index: 999;
+    padding: 10px; /* Ajoutez un peu de marge intérieure pour l'apparence */
+    text-align: center; /* Centrez le texte horizontalement */
+    z-index: 200;
 }
 
 @media (min-width:640px){
@@ -58,16 +94,20 @@ h1{
 }
 
 
-
 .collant{
   position: relative;
   text-align: center;
 }
 
 h2{
+  font-family: "times-new-roman";
+  /*font-family: "montserrat", serif;*/
+  font-style: italic;
+  font-weight: 500;
   color: rgb(0, 0, 0);
   text-align: center;
-  font-size: 80px;
+  font-size: 50px;
+  margin: 60px;
 }
 
 
@@ -75,6 +115,7 @@ p{
     color: black;
     font-weight: 200;
     font-style: normal;
+    font-size: 12px;
 }
 
 .index{
@@ -95,10 +136,13 @@ p{
 }
 
 .item{
-    display:grid;
+   
     width:auto; /* selon votre maquette */
     background: #ffffff;
     text-decoration: none;
+    position: relative;
+    display: inline-block;
+
   }
   
   .item>*{
@@ -110,22 +154,39 @@ p{
     transition:1s;
   }
   .item p{
-    font-size: 18px;
-    font-size: clamp(18px,2vw,32px);
+    font-size: 17px;
+    font-weight: 400;
+    font-style: italic;
     opacity:0;
+    position: absolute;
+    bottom:0px;          /* position en bas de l’image */
+    left:50%;
+    width: 100%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgb(255, 255, 255); /* bulle noire transparente */
+    color: rgb(0, 0, 0);
+    padding: 8px 5px;
+    border-radius: 10px;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translate(-50%, 100px);
+    border-radius: 0;     
   }
   .item:hover img{
-    opacity:0;
+    /*opacity:0;*/
+    filter: none;
   }
   .item:hover p{
     opacity:1;
+    transform: translate(-50%, 0);
   }
 
   .main-grid{
     display : grid;
-    grid-template-columns: 1fr ; /* Exemple avec des proportions */
-    gap: 20px; /* 20px d'espacement entre les colonnes */
-    /* margin: 100px; */
+    grid-template-columns: 2fr ; /* Exemple avec des proportions */
+    gap: 30px; /* 20px d'espacement entre les colonnes */
+    margin: 10px 50px;
     justify-content: center;
   }
 
@@ -135,11 +196,14 @@ p{
   }
 }
 
-
-  .item img{
+.item img{
     width: 100%;
     height: 100%;
-    object-fit: cover
+    object-fit: cover;
+    filter: grayscale(100%) sepia(50%) hue-rotate(160deg) saturate(200%) invert(100%) brightness(200%) contrast(90%);
+    transition: filter 0.4s ease;
+    display : block;
+    cursor: none;
   }
 
   .project {
@@ -170,10 +234,14 @@ p{
     font-weight: 10;
     font-style: normal;
     margin: 10px;
+    position: sticky; 
+    top: 90px; /* distance depuis le haut */ 
+    height: fit-content;
 }
 
 .sticky p{
-  font-size: 13px;
+  font-size: 11px;
+  margin-bottom: -20px;
 }
 
 
@@ -182,14 +250,16 @@ h3 {
   font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
-}
+    font-size: 15px;
+    margin-bottom: -5px;
+    }
 
 
 nav a{
   text-decoration: none;
   color: rgb(0, 0, 0);
   font-weight: 500;
-  font-size: 50px;
+  font-size: 16px;
 }
 
 .logo{
@@ -212,7 +282,7 @@ nav a{
 }
 
 .logo img{
-  width: 300px;
+  width: 200px;
   /*justify-self: center;*/
   transition: transform 0.5s ease;
   align-items: center;
@@ -231,8 +301,9 @@ align-items: center;
   color: black;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
-font-weight: 200;
-font-style: normal;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 14px;
 }
 
 .header-nav a:hover {
@@ -243,13 +314,14 @@ text-decoration: underline;  /* Soulignement uniquement au survol */
   text-decoration: underline;  /* Soulignement uniquement au survol */
   font-family: "Poppins", sans-serif;
   font-style: normal;
+  cursor: none;
 }
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Deux colonnes de même largeur */
+  grid-template-columns: 1fr 2fr; /* Deux colonnes de même largeur */
   gap: 20px; /* Espacement entre les colonnes */
-  margin: 20px;
+  margin: 30px;
 }
 
 .sticky {
@@ -259,7 +331,10 @@ text-decoration: underline;  /* Soulignement uniquement au survol */
 .item2 img{
   width: 100%; /* Les images prennent toute la largeur du conteneur */
   margin-bottom: 10px;
-  border-radius: 8px; /* Optionnel : arrondir les coins des images */
+  position: static; /* ou rien du tout */ 
+  top: 120px;
+  /*border-radius: 8px; /* Optionnel : arrondir les coins des images */
+  filter: none !important;
 }
 
 @media (orientation: portrait) {
@@ -287,16 +362,20 @@ margin-right: 10px;
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 20px;
+  font-size: 35px;
+  font-style: normal;
   color: black;
   z-index: 1000;
+  cursor: none;
 }
 
 @media (min-width:640px){
   .arrow {
-      font-size: 30px;
+      font-size: 35px;
+      cursor: none;
   }
 }
+
 
 .left-arrow {
   left: 1.5%;
@@ -306,7 +385,61 @@ margin-right: 10px;
   right: 1.5%;
 }
 
-body {
-  margin: 0;
-  padding: 0;
+
+@media (max-width: 800px) { 
+  .container { 
+    grid-template-columns: 1fr; 
+    padding-top: 60px;
+  } 
+  .sticky { 
+    position: static; 
+    top: 90px; } 
+    
+  }
+
+  .filters {
+    display: flex;
+    gap: 2rem;
+    margin: 5px 45px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5rem;
 }
+
+.filters button {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.filters button:hover {
+    opacity: 1;
+}
+
+.filters button.active {
+    opacity: 1;
+    font-weight: 600;
+}
+
+.container img,
+.grid img,
+.projet img {
+    filter: grayscale(100%) sepia(40%) hue-rotate(10deg) saturate(150%);
+    transition: filter 0.4s ease;
+}
+
+.container img:hover,
+.grid img:hover,
+.projet img:hover {
+    filter: none;
+}
+
+
+/*<a href="mythelegendes.html" class="item">
+            <img src="images/icone aceuil/aceuil-legende.jpg" width="3000" height="2000">
+            <p>Mythes & Légendes</p>
+        </a>*/

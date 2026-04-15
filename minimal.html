@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slow SMS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/icongn-02.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://use.typekit.net/rdn8luq.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body class="project grid">
+    <header class="header">
+        <h1 class="header-title">GABRIELLE NADEAU</h1>
+        <nav class="header-nav">
+            <a href="index.html"> PROJETS</a>
+            <a href="apropos.html">À PROPOS</a>
+        </nav>
+    </header>
+    <br>
+    <h2 class="sous titre">Slow SMS</h2>
+    <br>
+    <div class="container">
+        <div class="sticky">
+            <h3> Mission :</h3>
+            <p> Ce projet interroge la place de la lenteur dans une société dominée par l’instantanéité, le but étant de transformer un acte rapide en un acte 
+                lent : le sms, un acte instantané, accessible partout, à tout moment  par un dispositif omniprésent, le téléphone.</p>
+            <br>
+        <h3>Réalisation :</h3>
+                <p> J’ai choisi de transformer le SMS en un acte lent grâce à la calligraphie :
+                    Le langage SMS, habituellement produit en quelques secondes, devient ici un geste manuscrit exigeant temps, précision et attention.
+                    Le format s’inspire du parchemin rotulus : un objet vertical à dérouler, qui remplace le scroll du téléphone par un déploiement physique. La conversation devient alors tangible, inscrite dans la durée.
+                </p>
+                <br>
+                <p>Le projet mêle écriture manuscrite et codes du SMS : les messages datés s’étalent dans le temps comme une correspondance, les emojis tous différents et les taches d’encre rappellent le geste humain, et la variété des conversations montre la diversité des langages et abréviations propres aux relations.
+                </p>
+                <br>
+                <p>Une seconde réalisation reprend les conversations calligraphiées sous forme de tickets de caisse :
+                    Objet industriel, standardisé et produit en série, il illustre le phénomène de slow washing : la récupération de valeurs liées à la lenteur et à l’authenticité dans des logiques de production rapide et commerciale.
+                    Le geste lent devient alors un simple signe esthétique, vidé de sa dimension humaine.
+                </p>
+
+        <!-- Autres paragraphes... -->
+        </div>
+        <div class="item2">
+        <img src="images/sms_enroule.jpg">
+        <img src="images/sms-detoure.jpg">
+        <img src="images/detaille-sms.jpg">
+        <img src="images/tikets-de-quaisse.jpg">
+        <img src="images/tiket_de_quaisse_enroule.jpg">
+        </div>
+    </div>
+    <div>
+        <a href="tchaotchao.html" class="arrow left-arrow">❮</a>
+        <a href="memoire.html" class="arrow right-arrow">❯</a>
+        </div>
+
+    <div class="cursor"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+
+<script>
+const cursor = document.querySelector('.cursor');
+const trails = document.querySelectorAll('.trail');
+
+document.addEventListener('mousemove', (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+
+    // Curseur principal
+    cursor.style.transform = `translate(${x}px, ${y}px)`;
+
+    // Traînée progressive
+    trails.forEach((t, i) => {
+        setTimeout(() => {
+            t.style.transform = `translate(${x}px, ${y}px)`;
+        }, i * 40); // délai progressif = effet de mouvement
+    });
+});
+</script>
+</body>
+</html>

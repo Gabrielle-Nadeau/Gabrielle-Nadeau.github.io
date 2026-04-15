@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>La Caverne</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/icongn.gif">
+    <link rel="icon" href="images/icongn-02.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://use.typekit.net/rdn8luq.css">
@@ -14,9 +14,9 @@
 </head>
 <body class="project grid">
     <header class="header">
-        <h1 class="header-title">Gabrielle Nadeau</h1>
+        <h1 class="header-title">GABRIELLE NADEAU</h1>
         <nav class="header-nav">
-            <a href="index.html"> PORTFOLIO</a>
+            <a href="index.html"> PROJETS</a>
             <a href="apropos.html">À PROPOS</a>
         </nav>
     </header>
@@ -25,41 +25,66 @@
     <br>
     <div class="container">
         <div class="sticky">
-        <h3> La Caverne</h3>
-            <p> La caverne est une champignonnière implantée au cœur de Paris dans un ancien parking souterrain, qui a été réaménagé pour accueillir une production urbaine de champignons. Située au cœur de la capitale, La Caverne adopte une approche de production durable, locale et éco-responsable, en intégrant l’agriculture en milieu urbain et proposant des produits bio.</p>
-            <br>
-            <h3> Mission :</h3>
-            <p> La mission consiste à concevoir une identité graphique pour la champignonnière La Caverne, en intégrant et en transmettant de manière visuelle les valeurs de la marque.</p>
-            <br>
-        <h3> Problème à résoudre / objectif de com’ :</h3>
-            <p>Rendre compte à travers une identité visuelle d’une champignonnière urbaine implantée au cœur de paris dans un ancien parking souterrain, un lieu insolite, local et éco-responsable.</p>
+        <h3> Mission :</h3>
+            <p> La mission consiste à concevoir une identité graphique pour La Caverne, une champignonnière installée dans un ancien parking souterrain au cœur de Paris.</p>
             <br>
         <h3>Réalisation :</h3>
                 <p> J’ai décidé de mettre en avant l'aspect insolite du lieu en jouant sur l’interaction entre le monde urbain et le monde souterrain.
+                    Pour représenter cette interaction, j’ai fusionné deux typographies : sur la partie supérieure, j’ai choisi la typographie Parisine, utilisée dans la signalétique des transports parisiens, pour évoquer la localité de la Caverne. La partie inférieure des caractères, l’idée d’un lieu souterrain sous Paris, inspirée des pieds de champignons, rappelle les produits vendus par la Caverne. 
+                    Ainsi, cette fusion entre deux typographies qui s'opposent par leur dessin, symbolise l’harmonie entre deux mondes : le naturel et l’urbain.
                 </p>
-                <p>Pour représenter cet interaction, j’ai fusionné deux typographies : Sur la partie supérieure j’ai choisi la typographie Parisine, utilisée dans la signalétique des transports parisiens, pour évoquer la localité de la Caverne. La partie inférieure des caractères, l’idée d’un lieu souterrain sous Paris, inspirée des pieds de champignons, rappelle les produits vendus par la Caverne. Ce design, mêlant un dessin archaïque, texturé et naturel, fusionne avec la structure épurée et rigoureuse de la typographie Parisine, symbolisant l’harmonie entre deux mondes opposés : le naturel et l’urbain.
+                <br>
+                <p>Une identité noir et blanc rappelant une certaine économie de moyen allant parfaitement avec des valeurs écoresponsables, naturelles et sans artifice. Et permettant de se démarquer de ces concurrents.
                 </p>
-                <p>Une identité noir et blanc rappelant une certaine économie de moyen allant parfaitement avec des valeurs écoresponssables, naturelles et sans artifice. Et permettant de se démarquer de ces concurrents.
-                </p>
-                <p>Une identité en noir et blanc, reflétant une approche sobre et économique, en parfaite adéquation avec des valeurs d'écoresponsabilité, de naturel et d'authenticité. Ce choix distinctif permet également de se démarquer efficacement de la concurrence sans perdre en attractivité.</p>
+                <br>
+                <p> L’identité se déploie dans une logique de cohérence et de responsabilité.
+                    Sachets kraft biodégradable, cagettes recyclables valorisent une production locale et artisanale.
+                    Les étiquettes structurent le système :
+                    les pastilles circulaires scellent et synthétisent l’information et les formats plus larges intègrent un espace pour une écriture manuscrite, soulignant le circuit court et l’adaptabilité.</p>
 
         <!-- Autres paragraphes... -->
         </div>
         <div class="item2">
-        <img src="images/logo-noir-lacaverne.jpg">
+        <img src="images/paper-Logo-caverne.jpg">
+        <img src="images/tempon.jpg">
         <img src="images/carte-la-caverne.jpg">
         <img src="images/paper-bag-mockup.jpg">
-        <img src="images/tempon.jpg">
         <img src="images/papier-kraft.jpg">
         <img src="images/stikers-la-caverne.jpg">
-        <img src="images/cagette-la-caverne.jpg">
-        <img src="images/mockup-remorque.jpg">
         <img src="images/mockup-flayer.jpg">
+        <video src="images/animation-logo-caverne.mp4" controls width="600"></video>
         </div>
     </div>
     <div>
-        <a href="motsfarfelus.html" class="arrow left-arrow">❮</a>
-        <a href="recyclerie.html" class="arrow right-arrow">❯</a>
+        <a href="materioh.html" class="arrow left-arrow">❮</a>
+        <a href="tchaotchao.html" class="arrow right-arrow">❯</a>
         </div>
+
+    <div class="cursor"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+
+<script>
+const cursor = document.querySelector('.cursor');
+const trails = document.querySelectorAll('.trail');
+
+document.addEventListener('mousemove', (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+
+    // Curseur principal
+    cursor.style.transform = `translate(${x}px, ${y}px)`;
+
+    // Traînée progressive
+    trails.forEach((t, i) => {
+        setTimeout(() => {
+            t.style.transform = `translate(${x}px, ${y}px)`;
+        }, i * 40); // délai progressif = effet de mouvement
+    });
+});
+</script>
 </body>
 </html>

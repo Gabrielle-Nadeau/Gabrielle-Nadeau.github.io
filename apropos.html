@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À propos</title>
-    <link rel="icon" href="images/icongn.gif">
+    <link rel="icon" href="images/icongn-02.png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,21 +14,48 @@
 </head>
 <body class="project grid">
     <header class="header">
-        <h1 class="header-title">Gabrielle Nadeau</h1>
+        <h1 class="header-title">GABRIELLE NADEAU</h1>
         <nav class="header-nav">
-            <a href="index.html"> PORTFOLIO</a>
+            <a href="index.html"> PROJETS</a>
             <a href="apropos.html">À PROPOS</a>
         </nav>
     </header>
 
     
     <div class="logo">
-        <img src="images/tempon gn.png" width="100" height="100">
+        <img src="images/tempon gn-02-02.png" width="10" height="10">
         <div>
             <h3> À propos</h3>
             <p>Étudiante en DNMADE Graphisme, option Image et Communication, au lycée Auguste Renoir à Paris, je développe mes compétences dans la création visuelle et la communication graphique. À travers ma formation, j’ai eu l’opportunité de travailler sur divers projets qui m’ont permis d’enrichir ma pratique et la recherche de solutions créatives adaptées à des problématiques spécifiques. Mon objectif est de continuer à progresser dans mon domaine en acquérant de l’expérience et en affinant mes compétences, tout en contribuant à des projets concrets.</p>
             <h3> Mon CV</h3>
             <a class="cv" href="pdf/cv.pdf">Cliqué pour consulter mon CV</a>
     </div>
+
+    <div class="cursor"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+
+<script>
+const cursor = document.querySelector('.cursor');
+const trails = document.querySelectorAll('.trail');
+
+document.addEventListener('mousemove', (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+
+    // Curseur principal
+    cursor.style.transform = `translate(${x}px, ${y}px)`;
+
+    // Traînée progressive
+    trails.forEach((t, i) => {
+        setTimeout(() => {
+            t.style.transform = `translate(${x}px, ${y}px)`;
+        }, i * 40); // délai progressif = effet de mouvement
+    });
+});
+</script>
 </body>
 </html>

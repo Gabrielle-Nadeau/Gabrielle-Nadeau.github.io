@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection Épochè</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/icongn-02.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://use.typekit.net/rdn8luq.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body class="project grid">
+    <header class="header">
+        <h1 class="header-title">GABRIELLE NADEAU</h1>
+        <nav class="header-nav">
+            <a href="index.html"> PROJETS</a>
+            <a href="apropos.html">À PROPOS</a>
+        </nav>
+    </header>
+    <br>
+    <h2 class="sous titre">Collection Épochè</h2>
+    <br>
+    <div class="container">
+        <div class="sticky">
+        <h3> Mission :</h3>
+            <p> Ce projet consiste à créer une collection éditoriale sf où la typographie, pleinement expressive, devient un élément central du sens, à travers trois couvertures et la mise en pages intérieures d’un des ouvrages.</p>
+            <br>
+        <h3>Réalisation :</h3>
+                <p> L’Homme qui a perdu son ombre d’Adelbert von Chamisso met en scène un homme qui échange son ombre contre une richesse illimitée, avant d’être confronté au rejet social et à l’isolement.
+                    Pour ce faire, la mise en page traduit la perte de l’ombre en faisant un moteur narratif, plus elle disparaît dans le récit, plus elle envahit visuellement le livre. L’ombre du texte reflète chaque état psychologique  (enfermement, dissimulation, effondrement, solitude, mouvement) jouant sur la densité, le contraste et la lisibilité.</p>
+                <br>
+                <p> La collection repose sur des invariants graphiques assurant cohérence et identification :
+                    Un dégradé blanc/noir marque le passage du réel vers la science-fiction, le blanc incarne le quotidien, le noir le basculement et l’anomalie.
+                    Le glitch typographique agit comme trace visuelle d’une faille de cette anomalie.
+                    Le titre devient symptôme graphique du trouble.</p>
+                    <br>
+                    <p> Chaque ouvrage intègre dans son titre un indice visuel lié à son intrigue (L’Homme qui a perdu son ombre : présence diffuse et instable de l’ombre, L’Homme truqué : perturbations électriques évoquant une perception artificielle; La Machine à explorer le temps : titre absorbé par l’obscurité, suggérant disparition et menace.)</p>
+                
+        </div>
+        <div class="item2">
+        <img src="images/livre_main.jpg" width="3000" height="2000">
+        <img src="images/livre_dos.jpg" width="3000" height="2000">
+        <img src="images/couverture.jpg" width="3000" height="2000">
+        <img src="images/efondrment.jpg" width="3000" height="2000">
+        <img src="images/voyage_temps.jpg" width="3000" height="2000">
+        <img src="images/enfermement.jpg" width="3000" height="2000">
+        <img src="images/secret.jpg" width="3000" height="2000">
+        </div>
+    </div>
+    <div>
+        <a href="theatretypo.html" class="arrow left-arrow">❮</a>
+        <a href="materioh.html" class="arrow right-arrow">❯</a>
+    </div>    
+
+    <div class="cursor"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+
+<script>
+const cursor = document.querySelector('.cursor');
+const trails = document.querySelectorAll('.trail');
+
+document.addEventListener('mousemove', (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+
+    // Curseur principal
+    cursor.style.transform = `translate(${x}px, ${y}px)`;
+
+    // Traînée progressive
+    trails.forEach((t, i) => {
+        setTimeout(() => {
+            t.style.transform = `translate(${x}px, ${y}px)`;
+        }, i * 40); // délai progressif = effet de mouvement
+    });
+});
+</script>
+</body>
+</html>

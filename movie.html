@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The movie</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/icongn-02.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://use.typekit.net/rdn8luq.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body class="project grid">
+    <header class="header">
+        <h1 class="header-title">GABRIELLE NADEAU</h1>
+        <nav class="header-nav">
+            <a href="index.html"> PROJETS</a>
+            <a href="apropos.html">À PROPOS</a>
+        </nav>
+    </header>
+    <br>
+    <h2 class="sous titre">The movie</h2>
+    <br>
+    <div class="container">
+        <div class="sticky">
+        <h3> Mission :</h3>
+            <p>Le projet consiste à concevoir une typographie sur mesure pour l’affiche d’un film de space horror. Cette création s’inspire du récit d’une mission d’exploration spatiale envoyée enquêter sur la disparition d’un vaisseau ayant intercepté un signal mystérieux provenant d’une planète inconnue. 
+            </p>
+            <br>
+            <h3>Réalisation :</h3>
+                <p> On observe une volonté de synthétisatiser des caractères, cette simplification formelle produit une esthétique froide et technologique. Les formes géométriques strictes évoquent un univers scientifique ou futuriste.</p>
+            <br>    
+                    <p>La disparition de certains repères typographiques familiers donne l’impression d’un alphabet étranger, comme s’il s’agissait d’un système d’écriture provenant d’une civilisation extraterrestre.</p>
+            <br>   
+                <p> Les extrémités pointues des caractères introduisent une tension visuelle. Ces angles aigus évoquent des formes tranchantes ou organiques (griffes, crocs, épines), ce qui suggère une forme de danger ou d’agressivité.</p>
+        </div>
+        <div class="item2">
+        <img src="images/Mockup-the-moovie.jpg" alt="Affiche 1">
+        <img src="images/specimen-noir.jpg" alt="Affiche 2">
+        <img src="images/lettre_glyf.jpg" alt="Affiche 3">
+        <img src="images/planche_typo.jpg" alt="Affiche 4">
+        <img src="images/planche_lettre.jpg" alt="Affiche 5">
+        </div>
+    </div>
+    <div>
+        <a href="voyageimaginere.html" class="arrow left-arrow">❮</a>
+        <a href="theatretypo.html" class="arrow right-arrow">❯</a>
+    </div>
+
+    <div class="cursor"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+<div class="trail"></div>
+
+<script>
+const cursor = document.querySelector('.cursor');
+const trails = document.querySelectorAll('.trail');
+
+document.addEventListener('mousemove', (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+
+    // Curseur principal
+    cursor.style.transform = `translate(${x}px, ${y}px)`;
+
+    // Traînée progressive
+    trails.forEach((t, i) => {
+        setTimeout(() => {
+            t.style.transform = `translate(${x}px, ${y}px)`;
+        }, i * 40); // délai progressif = effet de mouvement
+    });
+});
+</script>
+</body>
+</html>

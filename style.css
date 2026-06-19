@@ -438,6 +438,34 @@ margin-right: 10px;
     filter: none;
 }
 
+.filter-bar {
+  display: flex;
+  justify-content: center;   /* centre horizontalement */
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.filter-btn {
+  font-family: 'Montserrat', sans-serif; /* change ici */
+  font-size: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.filter-btn:hover {
+  opacity: 1;
+}
+
+.filter-btn.active {
+  opacity: 1;
+  border-bottom: 2px solid black;
+}
+
+
 
 /*<a href="mythelegendes.html" class="item">
             <img src="images/icone aceuil/aceuil-legende.jpg" width="3000" height="2000">

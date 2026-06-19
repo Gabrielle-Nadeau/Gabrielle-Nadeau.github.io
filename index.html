@@ -22,8 +22,53 @@
             <a href="apropos.html">À PROPOS</a>
         </nav>
     </header>
+
     <h2 class="sous-titre">Projets</h2> 
+
+    <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="branding">Branding</button>
+        <button class="filter-btn" data-filter="edition">Édition</button>
+        <button class="filter-btn" data-filter="affiche">Affiche</button>
+    </div>
+
     <main class="main-grid">
+        <a href="lacaverne.html" class="item" data-category="branding">
+            <img src="images/icone aceuil/aceuil-lacaverne.jpg" width="3000" height="2000">
+            <p>La Caverne</p>
+        </a>
+        <a href="ouigo.html" class="item" data-category="branding">
+            <img src="images/icone aceuil/aceuil-ouigo.jpg" width="3000" height="2000">
+            <p>OUIGO Train Classique</p>
+        </a>
+        <a href="tchaotchao.html" class="item" data-category="branding">
+            <img src="images/icone aceuil/aceuil-tchaotchao.jpg" width="3000" height="2000">
+            <p>Tchao Tchao</p>
+        </a>
+        <a href="srp.html" class="item" data-category="branding">
+            <img src="images/icone aceuil/aceuil-srp.jpg" width="3000" height="2000">
+            <p>Journée de la téléphonie</p>
+        </a>
+        <a href="materioh.html" class="item" data-category="edition">
+            <img src="images/icone aceuil/aceuil-marerioh.jpg" width="3000" height="2000">
+            <p>Matérioh!</p>
+        </a>
+        <a href="collectionsf.html" class="item" data-category="edition">
+            <img src="images/icone aceuil/aceuil-collection_sf.jpg" width="3000" height="2000">
+            <p>Collection Épochè</p>
+        </a>
+        <a href="voyageimaginere.html" class="item" data-category="edition">
+            <img src="images/icone aceuil/aceuil-voyage.jpg" width="3000" height="2000">
+            <p>Voyage Imaginaire</p>
+        </a>
+        <a href="memoire.html" class="item" data-category="edition">
+            <img src="images/icone aceuil/aceuil-memoire.jpg" width="3000" height="2000">
+            <p>Un graphisme de la lenteur</p>
+        </a>
+        <a href="minimal.html" class="item" data-category="edition">
+            <img src="images/icone aceuil/aceuil-sms.jpg" width="3000" height="2000">
+            <p>Slow SMS</p>
+        </a>
         <a href="recyclerie.html" class="item" data-category="affiche">
             <img src="images/icone aceuil/aceuil-recyclerie2.jpg" width="3000" height="2000">
            <p>La Recyclerie</p>
@@ -32,70 +77,22 @@
             <img src="images/icone aceuil/aceuil-data.jpg" width="3000" height="2000">
             <p>Émissions de GES</p>
         </a>
+        <a href="movie.html" class="item" data-category="affiche">
+            <img src="images/icone aceuil/aceuil-the_moovei.jpg" width="3000" height="2000">
+            <p>The movie</p>
+        </a>
         <a href="portrait.html" class="item" data-category="affiche">
             <img src="images/icone aceuil/aceuil_potrait2.jpg" width="3000" height="2000">
             <p>Portrait</p>
-        </a>
-        <a href="voyageimaginere.html" class="item" data-category="edition">
-            <img src="images/icone aceuil/aceuil-voyage.jpg" width="3000" height="2000">
-            <p>Voyage Imaginaire</p>
-        </a>
-        <a href="movie.html" class="item" data-category="edition">
-            <img src="images/icone aceuil/aceuil-the_moovei.jpg" width="3000" height="2000">
-            <p>The movie</p>
         </a>
         <a href="theatretypo.html" class="item" data-category="experimentation">
             <img src="images/icone aceuil/aceuil-theatretypo.jpg" width="3000" height="2000">
             <p>Théatre Typographique</p>
         </a>
-        <a href="collectionsf.html" class="item" data-category="edition">
-            <img src="images/icone aceuil/aceuil-collection_sf.jpg" width="3000" height="2000">
-            <p>Collection Épochè</p>
-        </a>
-        <a href="materioh.html" class="item" data-category="edition">
-            <img src="images/icone aceuil/aceuil-marerioh.jpg" width="3000" height="2000">
-            <p>Matérioh!</p>
-        </a>
-        <a href="lacaverne.html" class="item" data-category="branding">
-            <img src="images/icone aceuil/aceuil-lacaverne.jpg" width="3000" height="2000">
-            <p>La Caverne</p>
-        </a>
-        <a href="tchaotchao.html" class="item" data-category="branding">
-            <img src="images/icone aceuil/aceuil-tchaotchao.jpg" width="3000" height="2000">
-            <p>Tchao Tchao</p>
-        </a>
-        <a href="minimal.html" class="item" data-category="experimentation">
-            <img src="images/icone aceuil/aceuil-sms.jpg" width="3000" height="2000">
-            <p>Slow SMS</p>
-        </a>
-        <a href="memoire.html" class="item" data-category="edition">
-            <img src="images/icone aceuil/aceuil-memoire.jpg" width="3000" height="2000">
-            <p>Un graphisme de la lenteur</p>
-        </a>
+
     </main>
-    
-    <script>
-const buttons = document.querySelectorAll('.filters button');
-const projects = document.querySelectorAll('.item');
 
-buttons.forEach(button => {
-  button.addEventListener('click', () => {
 
-    buttons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-
-    const filter = button.dataset.filter;
-
-    projects.forEach(project => {
-      if (filter === "all" || project.dataset.category === filter) {
-        project.style.display = "block";
-      } else {
-        project.style.display = "none";
-      }
-    });
-  });
-});
-</script>
 
 <div class="cursor"></div>
 <div class="trail"></div>
@@ -122,6 +119,32 @@ document.addEventListener('mousemove', (e) => {
         }, i * 40); // délai progressif = effet de mouvement
     });
 });
+</script>
+
+<script>
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.item'); // ← CORRECTION ICI
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+
+      // changer l'état actif
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+
+        if (filter === "all" || category === filter) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
 </script>
 
 
